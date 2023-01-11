@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <form ng-submit="getData()">
+        <div class="mb-3 mt-4">
+            <label for="delete" class="form-label">Select Location</label>
+            <select class="form-select form-select-lg" ng-model="emp_location" id="" required ng-change="getData()">
+                <option selected disabled value="">Select one</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Kochi">Kochi</option>
+                <option value="Chennai">Chennai</option>
+            </select>
+        </div>
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Search" class="btn btn-info" />
+        </div>
+        </form>
+        <section id="tableSection" class="container mt-5">
+            <table>
+                <thead>
+                    <th>emp_id</th>
+                    <th>emp_name</th>
+                    <th>emp_designation</th>
+                    <th>emp_dep</th>
+                    <th>emp_salary</th>
+                    <th>emp_location</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="data in datas">
+                        <td scope="row">{{data.emp_id}}</td>
+                        <td>{{data.emp_name}}</td>
+                        <td>{{data.emp_designation}}</td>
+                        <td>{{data.emp_dep}}</td>
+                        <td>{{data.emp_salary}}</td>
+                        <td>{{data.emp_location}}</td>
+                    </tr>
+                </tbody>
+                </table>
+        </section>
+    </div>
+</body>
+
+</html>
